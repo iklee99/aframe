@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+    <head>
+        <title>08 - Sky360</title>
+        <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    </head>
+    
+    <body>
+        <a-scene>
+            <!-- Asset Management System -->
+            <!-- 360 degree panorama image downloaded from https://texturify.com/ --> 
+            <!-- floor texture image downloaded from https://www.sharetextures.com/ -->
+            <a-assets>
+                <img id="floor" src="08_Sky360/woodplank_17_basecolor-1K.png">
+                <img id="floor-NRM" src="08_Sky360/woodplank_17_normal-1K.png">
+                <img id="clear-sunny-sky" src="08_Sky360/clear-sunny-sky.jpg">
+                <img id="360-panorama" src="08_Sky360/360-panorama.jpg">
+            </a-assets>
+            
+            <!-- Sky: large sphere with a color or texture mapped to the inside 
+            <a-sky src="#clear-sunny-sky"
+                   rotation="0 64 0">
+            </a-sky> -->
+            
+            <!-- Ground | Realistic Style 
+            <a-plane material="color: #FFFFFF;
+                               src: #floor;
+                               repeat: 5000 5000;
+                               normal-map: #floor-NRM;
+                               normal-texture-repeat: 5000 5000"
+                     rotation="-90 0 0"
+                     scale="10000 10000 1">
+            </a-plane> -->
+            
+            <!-- Ground | Cartoonish Style 
+            <a-plane material="color: #00AA00;
+                               shader: flat"
+                     rotation="-90 0 0"
+                     scale="10000 10000 1"> 
+            </a-plane> -->
+            
+            <!-- 360° Panorama -->
+            <a-sky src="#360-panorama"></a-sky> 
+        </a-scene>
+    </body>
+</html>

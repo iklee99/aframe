@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+    <head>
+        <title>05 - Textures and Materials</title>
+        <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    </head>
+    <!-- Texture files were downloaded from sharetextures.com -->
+    <body>
+        <a-scene>
+            <!-- Asset Management System -->
+            <!-- texture images downloaded from https://www.sharetextures.com/ --> 
+            <a-assets>
+                <img id="metal" src="05_Texture/1K-metal_roof_baseColor.jpg">
+                <img id="metal-NRM" src="05_Texture/1K-metal_roof_normal.jpg">
+                <img id="brick" src="05_Texture/1K-brick_wall_13_baseColor.jpg">
+                <img id="brick-NRM" src="05_Texture/1K-brick_wall_13_normal.jpg">
+            </a-assets>
+            
+            <!-- Light-Blue Box > Metal Room -->
+            <!-- To achieve reflection, with v1.4.2 you need to use side="back" (line 34 and 46) -->
+            <!-- repeat: x, y 방향 이미지 반복 횟수 -->
+            <!-- normal-scale: default는 1 1 인데 양수가 커질수록 normal 효과 커짐 -->
+            <!-- roughness: default는 0.5, 커질수록 표면 거칠어져서 매끈효과 덜해짐 -->
+            <a-box color="#FFFFFF"
+                   src="05_Texture/1K-metal_roof_baseColor.jpg"
+                   repeat="1 1"
+                   normal-map="#metal-NRM"
+                   normal-texture-repeat="1 1"
+                   normal-scale="3 3"
+                   roughness="0.2"
+                   width="4" height="4" depth="4"
+                   position="-2 1.5 -9"
+                   side="back">
+            </a-box>
+            <!-- Brown Box > Brick Room -->
+            <a-box material="color: #FFFFFF;
+                             src: #brick;
+                             repeat: 1 1;
+                             roughness: 0.3;
+                             normal-map: #brick-NRM;
+                             normal-texture-repeat: 1 1;
+                             normal-scale: 5 5"
+                   width="4" height="4" depth="4"
+                   position="2 1.5 -9"
+                   side="back">
+            </a-box>
+            
+            <!-- Blue Sphere | Standard Material -->
+            <a-sphere material="color: #0000AA;
+                                roughness: 0.2
+                                shader: standard"
+                      radius="0.5"
+                      position="-2 1.5 -8">
+            </a-sphere>
+            <!-- Red Sphere | Flat Material -->
+            <a-sphere material="color: #AA0000;
+                                roughness: 0.2;
+                                shader: flat;
+                                opacity: 0.5"
+                      radius="0.5"
+                      position="2 1.5 -8">
+            </a-sphere>
+        </a-scene>
+    </body>
+</html>

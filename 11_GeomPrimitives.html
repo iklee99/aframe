@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+    <head>
+        <title>11 - UI</title>
+        <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    </head>
+    <body>
+        <a-scene>
+          <!-- Camera -->
+          <a-entity position="0 0 10">
+            <a-camera></a-camera>
+          </a-entity>
+
+          <!-- Primitives -->
+          <a-circle color="#ABC" radius="0.8"></a-circle>
+          <!-- color name "tomato" is defined in CSS color table: 
+           https://www.quackit.com/css/css_color_codes.cfm-->
+          <a-cone color="tomato" position="2 0 0" radius-bottom="0.8" radius-top="0.3"></a-cone>
+          <a-cylinder color="crimson" position="4 0 0" height="1" radius="0.8"></a-cylinder>
+          <!--dodecahedron: 정12면체 (vertex 20, edge 30) face는 정육각형 -->
+          <a-dodecahedron color="#FF926B" position="-2 0 0" radius="0.8"></a-dodecahedron>
+          <!--icosahedron: 정20면체, face는 정삼각형 -->
+          <a-icosahedron color="#92FF33" position="-4 0 0" radius="0.8"></a-icosahedron>
+          <!--octahedron: 정8면체, face는 정삼각형 -->
+          <a-octahedron color="dimgrey" position="-4 2 0" radius="0.8"></a-octahedron>
+          <a-plane color="#CCC" position="-2 2 0" height="1.5" width="1.5"></a-plane>
+          <a-ring color="teal" position="0 2 0" radius-inner="0.4" radius-outer="0.8"></a-ring>
+          <a-sphere color="yellow" position="2 2 0" radius="0.8"></a-sphere>
+          <!--tetrahedron: 정4면체, face는 정삼각형 -->
+          <a-tetrahedron color="goldenrod" position="4 2 0" radius="1"></a-tetrahedron>
+          <a-text color="olivedrab" position="-0.4 -2 0" width="8" value="Hello!"></a-text>
+          <!--torus-knot: torus모양에 매듭효과가 추가된 구조, radius-tubular: tube의 반지름, 
+              p: 패턴반복횟수, q: 꼬임횟수 -->
+          <a-torus-knot color="#B84A39" arc="180" p="3" q="7" position="-2 -2 0" 
+          radius="0.5" radius-tubular="0.04"></a-torus-knot>
+          <a-torus color="#43A367" position="-4 -2 0" arc="270" radius="0.5" 
+          radius-tubular="0.1"></a-torus>
+          <!--vertex-c: 세번째 vertex, vertex-a: 첫번째, vertex-b: 두번째 -->
+          <a-triangle color="slateblue" position="2 -2 0" vertex-c="1 -1 0"></a-triangle>
+        </a-scene>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+    <head>
+        <title>06 - Primitives</title>
+        <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    </head>
+    
+    <body>
+        <a-scene>
+            <!-- Asset Management System -->
+            <a-assets>
+                <img id="L10-img-BG" src="06_Primitives/L10-img-background.jpg">
+            </a-assets>
+            
+            <!-- Background Image -->
+            <a-image src="#L10-img-BG" position="0 1.6 -11" scale="12 9 1"></a-image>
+            
+            <!-- PRIMITIVES: box -->
+            <a-box color="#AA0000" height="1.5" position="-1 0.5 -4"></a-box>
+            
+            <!-- ENTITY: box -->
+            <a-entity geometry="primitive: box;
+                                height: 1.5"
+                      material="shader: standard;
+                                color: #AA0000"
+                      position="1 0.5 -4">
+            </a-entity>
+            
+            <!-- ENTITY: cylinder with image texture -->
+            <!-- theta-length: theta-start에서 시작하여 시계방향으로의 지속 각도 --> 
+            <a-entity geometry="primitive: cylinder;
+                                theta-length: 90;
+                                theta-start: 135;
+                                radius: 0.707;
+                                height: 0.833;
+                                open-ended: true"
+                      material="shader: flat;
+                                color: #FFFFFF;
+                                side: double;
+                                src: #L10-img-BG"
+                      position="0 1.5 0"
+                      scale="-10 10 10">
+            </a-entity>
+        </a-scene>
+    </body>
+</html> 

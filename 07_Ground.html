@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+    <head>
+        <title>07 - Ground</title>
+        <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    </head>
+    
+    <body>
+        <a-scene>
+            <!-- Asset Management System -->
+            <!-- floor texture images downloaded from https://www.sharetextures.com/ -->
+            <a-assets>
+                <img id="floor" src="07_Ground/woodplank_17_basecolor-1K.png">
+                <img id="floor-NRM" src="07_Ground/woodplank_17_normal-1K.png">
+                <img id="floor2" src="07_Ground/woodparquet_92_basecolor-1K.png">
+                <img id="floor2-NRM" src="07_Ground/woodparquet_92_normal-1K.png">
+                <img id="floor3" src="07_Ground/ground_17_basecolor-1K.png">
+                <img id="floor3-NRM" src="07_Ground/ground_17_normal-1K.png">
+            </a-assets>
+            
+            <!-- Ground -->
+            <a-plane material="color: #FFFFFF;
+                               src: #floor3;
+                               repeat: 5 5;
+                               normal-map: #floor3-NRM;
+                               normal-texture-repeat: 5 5;
+                               normal-scale: 3 3"
+                     rotation="-90 0 0"
+                     scale="10 10 1">
+            </a-plane>
+        </a-scene>
+    </body>
+</html>
