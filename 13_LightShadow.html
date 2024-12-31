@@ -57,8 +57,9 @@
             </a-box>
             
             <!-- Yellow Box -->
-            <a-box color="#FFEB3B" scale="0.5 0.5 0.5" position="-1 1 0"
-                   shadow="cast: true" shader="flat"
+            <!-- shadow를 만들어 내는 object의 경우, shadow="cast: true"-->
+            <a-box color="#FFFF33" scale="0.5 0.5 0.5" position="-1 1 0"
+                   shadow="cast: true"
                    animation="property: rotation;
                               to: 0 360 0;
                               loop: true;
@@ -67,11 +68,8 @@
             </a-box>
             
             <!-- Orange Box -->
-            <!-- When applying more than one animation to the same object
-                 you need to name-space them with a double underscore and
-                 give the 2 animations 2 different names (line 85 and 90).
-                 ALl the new easing functions are available here:
-                 https://aframe.io/docs/1.0.0/components/animation.html#easings -->
+            <!-- 두개 이상의 animation을 넣을 경우: animation__1 animation__2 와 같이 
+                double underscore를 사용 -->
             <a-box id="orange-box"
                    color="#FF5722" scale="0.5 0.5 0.5" position="1 1 0"
                    shadow="cast: true"
@@ -94,8 +92,7 @@
             </a-entity>
             
             <!-- Custom Light | Point -->
-            <!-- ALl the new easing functions are available here:
-             https://aframe.io/docs/1.0.0/components/animation.html#easings -->
+            <!-- shadow를 만들어 내는 light인 경우 casstShadow: true -->
             <a-entity light="type: point;
                              intensity: 0.8;
                              distance: 10;
@@ -111,6 +108,11 @@
             </a-entity>
             
             <!-- Custom Light | Spot -->
+            <!-- spotlight의 경우, target은 entity의 id로 지정 -->
+            <!-- penumbra는 cone모양의 light 맨 가장자리의 smooth한 부분 --> 
+            <!-- https://learnopengl.com/Lighting/Light-casters 의 Spotlight section에서 
+              phi는 아래의 angle (30 degree), SpotDir vector는 target (orange box) 으로의 
+              vector, penumbra는 Smooth/Soft edges section을 볼것 -->
             <a-entity light="type: spot;
                              target: #orange-box;
                              color: #C40070;
